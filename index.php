@@ -2,10 +2,11 @@
 
 // Auto Load
 require_once 'SplClassLoader.php';
-function __autoload($class) {
+function classAutoLoader($class) {
     $loader = new SplClassLoader();
     $loader->loadClass($class);
 }
+spl_autoload_register('classAutoLoader');
 
 // Using a class on the global namespace
 $class = new AppClass();
